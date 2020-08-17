@@ -1,10 +1,10 @@
 # About
 This project as my test and examples how to build [nginx] with [QUIC] support.
 
-## Requirements
+# Requirements
 * Docker
 
-## Usage
+# Usage
 [All tags](https://hub.docker.com/r/panaceya/nginx-build-quic/tags)
 
 
@@ -15,7 +15,7 @@ This project as my test and examples how to build [nginx] with [QUIC] support.
 * centos-7
 * centos-8
 
-### Docker file
+## Docker file
 ```
 FROM panaceya/nginx-build-quic:<tag>
 #
