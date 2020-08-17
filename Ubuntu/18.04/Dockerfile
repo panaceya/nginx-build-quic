@@ -4,7 +4,8 @@ ENV TZ=Europe/Kiev
 USER root
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt update -yq 
+RUN apt update -yq
+RUN apt upgrade -yq
 RUN apt install -yq mercurial git build-essential zlib1g-dev zlib1g golang-go gcc libpcre3-dev cmake ninja-build
 
 WORKDIR /usr/local/src
