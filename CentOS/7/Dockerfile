@@ -10,6 +10,7 @@ RUN yum upgrade -y
 RUN yum install -y devtoolset-7-make devtoolset-8-toolchain ca-certificates mercurial git224 zlib-devel golang-go cmake3 ninja-build libunwind-devel pcre-devel make
 RUN ln -s /opt/rh/devtoolset-8/root/usr/bin/gcc /usr/local/bin/gcc
 RUN ln -s /opt/rh/devtoolset-8/root/usr/bin/c++ /usr/local/bin/c++
+RUN ln -s /opt/rh/devtoolset-8/root/usr/bin/cc /usr/local/bin/cc
 RUN ln -s /opt/rh/devtoolset-8/root/usr/bin/make /usr/local/bin/make
 
 WORKDIR /usr/local/src
@@ -35,7 +36,7 @@ RUN ./auto/configure \
     --with-http_v2_module \
     --with-http_v3_module \
     --with-cc-opt="-I../boringssl/include"  \
-    --with-ld-opt="-L../boringssl/build/ssl -L../boringssl/build/crypto"
+    --with-ld-opt="-L../boringssl/build/ssl -L../boringssl/build/crypto"   
 RUN make
 RUN make install 
 FROM centos:7
