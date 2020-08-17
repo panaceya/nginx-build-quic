@@ -12,6 +12,8 @@ This project as my test and examples how to build [nginx] with [QUIC] support.
 
 * ubuntu-18.04
 * ubuntu-20.04
+* centos-7
+* centos-8
 
 ### Docker file
 ```
