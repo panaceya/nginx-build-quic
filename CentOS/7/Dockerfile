@@ -1,13 +1,11 @@
 FROM centos:7 AS build
 MAINTAINER ThePanaceya <https://github.com/panaceya>
-ENV TZ=Europe/Kiev
-USER root
 
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN yum --enablerepo=extras  install -y epel-release centos-release-scl-rh https://repo.ius.io/ius-release-el7.rpm
+USER root
+RUN yum --enablerepo=extras install -q -y epel-release centos-release-scl-rh https://repo.ius.io/ius-release-el7.rpm
 RUN curl -o /etc/yum.repos.d/mercurial.repo https://www.mercurial-scm.org/release/centos7/mercurial.repo
-RUN yum upgrade -y
-RUN yum install -y devtoolset-7-make devtoolset-8-toolchain ca-certificates mercurial git224 zlib-devel golang-go cmake3 ninja-build libunwind-devel pcre-devel make
+RUN yum upgrade -q -y
+RUN yum install -q -y devtoolset-8-make devtoolset-8-toolchain ca-certificates mercurial git224 zlib-devel golang-go cmake3 ninja-build libunwind-devel pcre-devel
 RUN ln -s /opt/rh/devtoolset-8/root/usr/bin/gcc /usr/local/bin/gcc
 RUN ln -s /opt/rh/devtoolset-8/root/usr/bin/c++ /usr/local/bin/c++
 RUN ln -s /opt/rh/devtoolset-8/root/usr/bin/cc /usr/local/bin/cc
