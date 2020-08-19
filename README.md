@@ -1,5 +1,4 @@
-# About [![HitCount](http://hits.dwyl.com/panaceya/nginx-build-quic.svg)](http://hits.dwyl.com/panaceya/nginx-build-quic) [![Docker Pulls](https://img.shields.io/docker/pulls/panaceya/nginx-build-quic?style=flat-square)](https://hub.docker.com/r/panaceya/nginx-build-quic)
-
+# About [![HitCount](http://hits.dwyl.com/panaceya/nginx-build-quic.svg)](http://hits.dwyl.com/panaceya/nginx-build-quic) [![Docker Pulls](https://img.shields.io/docker/pulls/panaceya/nginx-build-quic?style=flat-square)](https://hub.docker.com/r/panaceya/nginx-build-quic) ![GitHub](https://img.shields.io/github/license/panaceya/nginx-build-quic)
 
 This project as my test and examples how to build [nginx] with [QUIC] support.
 
